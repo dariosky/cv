@@ -1,9 +1,13 @@
+from socket import gethostname
 import os
 from jinja2 import Environment, FileSystemLoader
 from werkzeug.exceptions import HTTPException
 from werkzeug.routing import Rule, Map
 from werkzeug.wrappers import Request, Response
 from werkzeug.wsgi import SharedDataMiddleware
+
+hostname = gethostname()
+DEBUG = "webfaction" not in hostname
 
 
 class ImpressJS(object):
@@ -37,7 +41,7 @@ class ImpressJS(object):
 
 	def on_main(self, request):
 		error = None
-		return self.render_template('cv.html', error=error)
+		return self.render_template('cv.html', debug=DEBUG)
 
 
 def create_app(with_static=True):
@@ -54,4 +58,5 @@ if __name__ == '__main__':
 	from werkzeug.serving import run_simple
 
 	app = create_app()
-	run_simple('127.0.0.1', 5000, app, use_debugger=True, use_reloader=True)
+	port = 5000 if DEBUG else 31045
+	run_simple('127.0.0.1', port, app, use_debugger=DEBUG, use_reloader=not DEBUG)
