@@ -1,0 +1,341 @@
+{% extends 'base.html' %}
+{% block title %}Curriculum vitae{% endblock %}
+
+{% block body %}
+<div class="fallback">
+	<div class="message">
+		<p>Your browser <b>doesn't support some features required</b> to correctly see this CV.</p>
+
+		<p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+	</div>
+</div>
+
+
+<div id='impress'>
+<div id="dario" class="step slide" data-x="-200" data-scale="1.2">
+	<div id='meOnCV' class="tape"><img width="250" src="/static/cvMedia/darioxcv.jpg" alt="Dario Varotto portrait">
+	</div>
+	<h1>Dario Varotto</h1>
+
+	<p>Developer, designer & tech geek</p>
+</div>
+
+<div id="education" class="step" data-x="0" data-y="700" data-scale="0.5" data-rotate="90">
+	<h1>Education</h1>
+	<img src="/static/cvMedia/university%20hat.svg"
+		 alt=""
+		 width="200" height="120"
+		 style="text-align: center; display: block; margin: 0 auto">
+
+	<div class="sublist-block">
+
+		<div id="university">
+			<h2>Bachelor of science in Computer Engineering</h2>
+
+			<p>Univeristy of Padua, 2005</p>
+
+			<div>
+				<img src="/static/cvMedia/logo_unipd.png"
+					 alt="University of Padua - logo"
+					 height="70" width="70">
+			</div>
+		</div>
+
+		<div id="secondary">
+			<h2>Head technician in computer technology</h2>
+
+			<p>Galileo Ferraris, Padua, 1998</p>
+		</div>
+	</div>
+</div>
+
+<div id="previousWorks" class="step" data-x="-400" data-y="700" data-scale="0.5" data-rotate="90">
+	<h1>Work experiences</h1>
+
+	<div id="gears">
+		<img id="g1" src="/static/cvMedia/gear.svg" alt="">
+		<img id="g2" src="/static/cvMedia/gear.svg" alt="">
+		<img id="g3" src="/static/cvMedia/gear.svg" alt="">
+	</div>
+</div>
+
+
+<div id='interevent' class="job step" data-x="-530" data-y="700" data-scale="0.3" data-rotate="90">
+	<a href="http://www.interactico.com/" target="_blank">
+		<img src="/static/cvMedia/works/interevent.svg" height="120" width="120" alt="Interevent srl">
+		<img src="/static/cvMedia/works/interactico.svg" height="120" width="216" alt="Interactico">
+	</a>
+
+	<div class="role">Web developer</div>
+	<p class="timerange">since Aug 2013</p>
+	<!--<a class='more hidden' href="#interevent-detail">show more...</a>-->
+</div>
+
+<div id='mion' class="job step"
+	 data-x="-630" data-y="700" data-scale="0.3" data-rotate="90">
+	<a target='_blank' href="http://www.mion.com/">
+		<img src="/static/cvMedia/works/mion.svg" width="300" height="112"
+			 alt="Mion labels"></a>
+
+	<div class="vcenter role"><p>Developer & Sysadmin</p></div>
+	<p class="timerange">Feb 2006 - Aug 2013</p>
+	<a class='more hidden' href="#mion-detail">show more...</a>
+</div>
+
+{% set detailclasses = "step notHistory hidden" %}
+<!-- notHistory hidden -->
+<div id='mion-detail' class="{{ detailclasses }}"
+	 data-x="-685" data-y="700"
+	 data-scale="0.1" data-rotate="90">
+	<!--style="background-color: red"-->
+	<p class="longText">
+		<a target='_blank' href="http://www.mion.com/">Mion s.p.a.</a> is a medium-sized production company
+		making woven labels and printed hangtags for fashion firms all over the world.
+	</p>
+
+	<p class="longText">
+		My job involved many optimization and integration problems.<br>
+		Interfacing with a closed source ERP and developing interfaces with many tools was
+		funny and challenging.
+	</p>
+</div>
+
+<div id='mion-detail-2' class="{{ detailclasses }}"
+	 data-x="-685" data-y="700"
+	 data-scale="0.1" data-rotate="90" data-rotate-x="30"
+		>
+	<p class="longText">
+		One of the tasks involved the management of the product images.<br>
+		I developed a C# client-server system to provide a flexible storage,
+		with size calibration and ACL needed for the next steps...
+	</p>
+	<img class='screenshot' src="/static/cvMedia/screenshots/web.mion/0.%20mimago.jpg"
+			alt="Screenshot of Mimago (a product images manager for Mion">
+</div>
+
+<div id='mion-detail-3' class="{{ detailclasses }}"
+	 data-x="-685" data-y="700"
+	 data-scale="0.1" data-rotate="90" data-rotate-x="60">
+	<p class="longText">
+		Then a Django webapp was created to get the data from our ERP and allow
+		customer interaction, operability and connection with tracking services.
+		The new platform was both flexible and modular to be able to manage the upcoming needs.
+	</p>
+	<img class='screenshot' src="/static/cvMedia/screenshots/web.mion/wob.jpg"
+			alt="Screenshots of Web Ordering System">
+</div>
+
+<div id='mion-detail-4' class="{{ detailclasses }}"
+	 data-x="-685" data-y="700"
+	 data-scale="0.1" data-rotate="90" data-rotate-x="90">
+	<p class="longText">
+		Another module allowed agents to see the collection in a catalog
+		and request samples in their mobile devices.
+	</p>
+	<img class='screenshot' src="/static/cvMedia/screenshots/web.mion/catalog.jpg"
+			alt="Screenshots for the Mion catalog online">
+</div>
+
+
+<div id='tam' class="job step" data-x="-750" data-y="700" data-scale="0.3" data-rotate="90">
+	<img src="/static/cvMedia/works/tam.svg" width="180" height="180"
+		 alt="TaM Taxi Manager">
+
+	<div class="vcenter role"><p>Full-stack Django Developer</p></div>
+	<p class="timerange">Since 2009</p>
+	<a class='more hidden' href="#tam-detail">show more...</a>
+</div>
+
+<div id='tam-detail' class="{{ detailclasses }}"
+	 data-x="-820" data-y="700"
+	 data-scale="0.1" data-rotate="90" data-rotate-x="0">
+	<p class="longText">
+		TaM is a Taxi Manager system to manage local Taxi consortia in Padova area.
+		I was asked to create a complete platform to cover all the aspects of drivers and administrative work.
+	</p>
+	<img class='screenshot' src="/static/cvMedia/screenshots/TaM/0.homes.jpg"
+			alt="Screenshots of the Tam login pages">
+</div>
+
+<div id='tam-detail-2' class="{{ detailclasses }}"
+	 data-x="-820" data-y="700"
+	 data-scale="0.1" data-rotate="90" data-rotate-x="30">
+	<p class="longText">
+		Prices, costs, customers managements, routes are all managed from the web interface.
+	</p>
+	<img class='screenshot' src="/static/cvMedia/screenshots/TaM/1.main.jpg"
+			alt="TaM main page">
+</div>
+
+<div id='tam-detail-3' class="{{ detailclasses }}"
+	 data-x="-820" data-y="700"
+	 data-scale="0.1" data-rotate="90" data-rotate-x="60">
+	<p class="longText">
+		All the action follow strict ACL policies and logs are stored in a DB.<br>
+		Invoices are created automatically and can be exported as PDF.
+	</p>
+	<img class='screenshot' src="/static/cvMedia/screenshots/TaM/2.screens.jpg"
+			alt="Some screenshot of TaM">
+</div>
+
+<div id='tam-detail-4' class="{{ detailclasses }}"
+	 data-x="-820" data-y="700"
+	 data-scale="0.1" data-rotate="90" data-rotate-x="90">
+	<p class="longText">
+		A custom access has been given to hotels and agencies customers to allow them to book travels
+		and get notifications by email.
+	</p>
+	<img class='screenshot' src="/static/cvMedia/screenshots/TaM/3.hotel.jpg"
+			alt="Screenshot of the hotel access for Tam">
+</div>
+
+<div id='otherWorks' class="job step" data-x="-950" data-y="700" data-scale="0.3" data-rotate="90">
+	<h1>Other works</h1>
+
+	<div class="flexlist">
+
+		<div>
+			<h2>Developer & sysadmin</h2>
+
+			<p>Rigomar s.r.l.</p>
+
+			<div>
+				<img src="/static/cvMedia/works/other/logo%20Rigomar.gif"
+						alt="Rigomar logo">
+			</div>
+		</div>
+
+		<div>
+			<h2>CAD technician</h2>
+
+			<p><a href="http://www.ecospacesystem.it/" target="_blank">ECO systems s.r.l.</a></p>
+
+			<div>
+				<img src="/static/cvMedia/works/other/logo%20eco.png"
+						alt="ECO space system logo">
+			</div>
+		</div>
+	</div>
+	<div class="flexlist">
+
+		<div>
+			<h2>Computer science teacher</h2>
+
+			<p><a href="http://www.istitutodantealighieri.it/" target="_blank">Istituto Dante Alighieri</a></p>
+
+			<div>
+				<img src="/static/cvMedia/works/other/dante.png"
+						alt="Istituto dante alighieri logo">
+			</div>
+		</div>
+
+		<div>
+			<h2>3D modeler</h2>
+
+			<p>Progress pubblicità</p>
+
+			<div>
+				<img src="/static/cvMedia/works/other/logo%20progress.gif" alt="Progress pubblicità logo">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id='skills' class="job step" data-x="400" data-y="680" data-scale="0.5" data-rotate="-90">
+	<h1>Skills</h1>
+
+	<div class="flexlist vertical">
+
+		<div>
+			<h2>Backend Development</h2>
+			#django #postgresql #mongodb
+			#mediagenerator #south #reportlab<br>
+			#tsql #java #csharp #php
+			#svn #git #webfaction
+		</div>
+
+		<div>
+			<h2>Administration</h2>
+			#linux #virtualization #vmware #vsphere
+			#gunicorn
+			#qmail #squid #sme
+		</div>
+
+		<div>
+			<h2>Frontend</h2>
+			#javascript #jquery #html #css
+			#gevent-socket.io #nodejs #meteor
+		</div>
+
+		<div>
+			<h2>Design</h2>
+			#photoshop #inkscape #aftereffects
+		</div>
+	</div>
+</div>
+
+<div id="details" class="step slide hidden" data-x="-570" data-y="-150"
+	 data-scale=".3" data-rotate-y="180" data-rotate-z="5">
+	<h1>Contact details</h1>
+
+	<p>dario.varotto@gmail.com</p>
+
+	<p><img class="icon" src="/static/cvMedia/details/skype.svg" alt="skype"> dario.varotto</p>
+
+	<p><img class="icon" src="/static/cvMedia/details/twitter.svg" alt="twitter"/> @dariosky</p>
+</div>
+
+<div id="overview" class="step" data-x="0" data-y="300" data-scale="2">
+</div>
+
+</div>
+
+<div class="hint">
+	<p>Use spacebar or arrow keys to navigate</p>
+</div>
+<script>
+	if ("ontouchstart" in document.documentElement) {
+		document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+	}
+
+	// prevent the mouse wheel
+	var mouseWheelHandler = function (e) {
+		return false;
+	};
+	document.addEventListener("mousewheel", mouseWheelHandler, false);
+	document.addEventListener("DOMMouseScroll", mouseWheelHandler, false);
+
+</script>
+
+<script src="/static/impress.js/js/impress.js"></script>
+<script>
+	var api = impress();
+	api.init();
+	var unLinearStory = function (root) {
+		var oldNext = api.next,
+				oldPrev = api.prev;
+
+		function override(oldfunc) {
+			// return a function equal to the oldfunc (prev/next) but skipping steps if they are .notHistory
+			return function () {
+				var result,
+						currentStep = document.querySelector('.active'); // get the current step
+				if (currentStep.classList.contains('notHistory')) { // if we are in a detail step, move to next detail
+					return oldfunc.apply(this, arguments);
+				}
+
+				do {
+					result = oldfunc.apply(this, arguments); // like calling super
+				}
+				while (result.classList.contains('notHistory'));	// skip if .notHistoy
+				return result;
+			}
+		}
+
+		api.next = override(oldNext);
+		api.prev = override(oldPrev);
+
+	};
+	unLinearStory(api);	// my CV should not linear, .nostory steps should be reached only by goto
+</script>
+{% endblock %}

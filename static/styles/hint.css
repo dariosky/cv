@@ -1,0 +1,21 @@
+.hint {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #eeeeee;
+  text-align: center;
+  font-size: 30px;
+  padding: 20px;
+  z-index: 100;
+  opacity: 0; }
+
+.impress-enabled .hint {
+  display: block; }
+
+.impress-on-dario .hint {
+  opacity: 1;
+  -webkit-transition: opacity 1s 5s;
+  -moz-transition: opacity 1s 5s;
+  transition: opacity 1s 5s; }

@@ -1,0 +1,28 @@
+@import "bourbon/bourbon"
+.hint
+	// the hint
+	//display: none
+
+	position: fixed
+	left: 0
+	right: 0
+	bottom: 0
+
+	background: rgba(0, 0, 0, 0.5)
+	color: #EEE
+	text-align: center
+
+	font-size: 30px
+	padding: 20px
+
+	z-index: 100
+
+	opacity: 0
+
+.impress-enabled .hint
+	display: block
+
+.impress-on-dario .hint
+	opacity: 1
+	@include transition(opacity 1s 5s)
+

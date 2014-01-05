@@ -1,0 +1,328 @@
+@import "bourbon/bourbon"
+@import "reset.css"
+//@import url(http://fonts.googleapis.com/css?family=Oldenburg)
+$background: #FFFFFA
+@font-face
+	font-family: 'Oldenburg'
+	font-style: normal
+	font-weight: 400
+	src: local('Oldenburg'), local('Oldenburg-Regular'), url(/static/fonts/Oldenburg.woff) format('woff')
+
+@mixin background-opacity($color, $opacity: 0.3)
+	// fallback
+	background: $color
+
+	background: rgba($color, $opacity)
+
+html
+	height: 100%
+
+body
+	height: 100%
+	background-color: $background
+	color: #11557C
+	@include background-image(radial-gradient(center, ellipse cover, rgba(99, 99, 99, 0) 0%, rgba(99, 99, 99, 0) 90%, rgba(99, 99, 99, 0.6) 100%))
+	background-position: fixed
+	background-repeat: no-repeat
+
+h1
+	//font-family: $helvetica
+	font-size: 1.2em
+	font-weight: bold
+
+h2
+	//font-family: $helvetica
+	font-size: 1.2em
+	font-weight: bold
+
+b, strong
+	font-weight: bold
+
+i, em
+	font-style: italic
+
+a
+	color: inherit
+	text-decoration: none
+	padding: 0 0.1em
+	background: rgba(255, 255, 255, 0.5)
+	text-shadow: -1px -1px 2px rgba(100, 100, 100, 0.9)
+	border-radius: 0.2em
+
+	@include transition(all 0.5s)
+
+	&:hover, &:focus
+		background: rgba(255, 255, 255, 1)
+		text-shadow: -1px -1px 2px rgba(100, 100, 100, 0.5)
+
+.impress-supported .fallback
+	display: none
+
+.fallback
+	height: 100%
+	display: flex
+	align-items: center
+	justify-content: center
+
+	.message
+		text-align: center
+		max-width: 50%
+
+		font-family: sans-serif
+		line-height: 1.3
+		padding: 10px
+		margin: 20px auto
+
+		border: 1px solid #E4C652
+		border-radius: 10px
+		background: #EEDC94
+
+/* let's start with steps */
+
+.step
+	//border: 2px solid black	 // TMP: Temporary border for debug
+	position: relative
+	width: 900px
+	font-size: 40px
+	padding: 40px
+	margin: 20px auto
+
+	@include box-sizing(border-box)
+	//font-family: 'PT Serif', georgia, serif
+	font-family: 'Oldenburg', cursive
+	line-height: 1.5
+
+.impress-enabled .step
+	margin: 0
+	opacity: 0.2
+	@include transition(opacity 1s)
+
+	&.active
+		opacity: 1
+
+/* some effect on my image */
+.tape
+	position: relative
+	margin: 20px
+	background-color: white
+	padding: 15px 15px 35px 15px
+	border: 1px solid rgba(0, 0, 0, .5)
+	box-shadow: 8px 10px 10px rgba(0, 0, 0, .75)
+	p
+		color: #fff
+	&:before, &:after
+		content: ""
+		display: block
+		position: absolute
+		background-color: rgba(220, 212, 136, 0.75)
+		height: 45px
+		width: 90px
+	&:before
+		left: -25px
+		top: -20px
+		@include transform(rotate(-20deg))
+
+	&:after
+		right: -35px
+		bottom: -20px
+		@include transform(rotate(-20deg))
+
+.tape#meOnCV
+	display: inline-block
+	position: relative
+	left: -20px
+	@include transform(rotate(-5deg))
+
+.step
+	padding: 0
+	//height: 5000px
+	//display: flex
+	//flex-flow: column
+	h1
+		//text-align: center
+		font-size: 2em
+		text-shadow: 4px 4px 35px rgba($background, 1)
+	//position: relative
+	//top: -45px
+
+	.sublist-block
+		display: flex
+
+		div
+			flex-flow: row
+
+			justify-content: center
+			font-size: 0.5em
+			text-align: center
+			margin: 1em
+
+//@include background-opacity($background, $opacity: .7)
+
+//border-radius: 50%
+//border: 3px solid #333
+
+@include keyframes(rotation-cw)
+	from
+		@include transform(rotate(0deg))
+	to
+		@include transform(rotate(359deg))
+
+@include keyframes(rotation-ccw)
+	from
+		@include transform(rotate(389deg))
+	to
+		@include transform(rotate(30deg))
+
+.timerange
+	color: silver
+	font-size: 0.6em
+
+.step:not(.active)
+	// activate gear rotation only when active
+	#gears img
+		@include animation-play-state(paused !important)
+
+#previousWorks
+	#gears
+		position: relative
+		height: 200px
+		margin-top: 30px
+
+		img
+			position: absolute
+		#g1
+			width: 150px
+			height: 150px
+		#g2
+			top: -18px
+			left: 137px
+			width: 120px
+			height: 120px
+			@include transform(rotate(30deg))
+		#g3
+			top: 26px
+			left: 248px
+			width: 80px
+			height: 80px
+
+		#g1
+			@include animation(rotation-cw 3s infinite linear)
+		#g2
+			@include animation(rotation-ccw 3s infinite linear)
+		#g3
+			@include animation(rotation-cw 3s infinite linear)
+
+.more
+	// the show more link are on the bottom right
+	position: absolute
+	font-size: .6em
+	right: 0
+	bottom: 0
+
+.role
+	position: absolute
+	right: 0
+	top: 80px
+
+// make everything opaque when showing the overview
+.impress-on-overview .step
+	opacity: 1
+	cursor: pointer
+
+// hide some step until they are current
+.hidden.step
+	&:not(.active)
+		opacity: 0
+
+.step:not(.active)
+	.hidden
+		opacity: 0
+
+.vcenter
+	// an helper class to keep the text inside vertical centered
+	vertical-align: middle
+	text-align: center
+	display: table
+
+.vcenter p
+	display: table-cell
+	vertical-align: middle
+
+@import "hint"
+
+.step
+	.longText
+		font-size: 20px
+		margin: 20px
+
+	.screenshot
+		display: block
+		margin: 0 auto
+		text-align: center
+		max-height: 300px
+		max-width: 600px
+
+.flexlist
+	width: 100%	// needed for firefox
+
+	// the container is a flex
+	display: -webkit-box
+	display: -moz-box
+	display: -ms-flexbox
+	display: -webkit-flex
+	display: flex
+
+	// specify the main axis (row or colum
+	-webkit-flex-direction: row
+	flex-direction: row
+	flex-flow: row
+	flex-wrap: wrap
+	
+	//align-content: center<
+
+	// center on the other axis
+	-webkit-box-align: center
+	-moz-box-align: center
+	-ms-flex-align: center
+	-webkit-align-items: center
+	align-items: center
+
+	// align on the main axis
+	-webkit-box-pack: center
+	-moz-box-pack: center
+	-ms-flex-pack: center
+	-webkit-justify-content: center
+	justify-content: center
+
+	div
+		flex: auto
+		//flex-flow: row
+		//justify-content: center
+		font-size: 0.5em
+		text-align: center
+		margin: 1em
+
+.flexlist.vertical
+	-webkit-flex-direction: column
+	flex-direction: column
+	flex-flow: column
+
+
+#otherWorks
+	.flexlist
+		div
+			min-width: 300px
+
+	img
+		margin: 10px
+		max-height: 100px
+		max-width: 200px
+
+#details
+	img
+		display: inline-block
+		vertical-align: middle
+
+	.icon
+		max-width: 40px
+		max-height: 40px
