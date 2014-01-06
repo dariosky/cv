@@ -18,7 +18,9 @@
 
 {% block body %}{% endblock %}
 
-
+{% if not debug %}
+	{% include 'analytics.html' %}
+{%endif%}
 </body>
 
 </html>

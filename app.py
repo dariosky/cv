@@ -10,7 +10,6 @@ from werkzeug.wsgi import SharedDataMiddleware
 hostname = gethostname()
 DEBUG = "webfaction" not in hostname
 
-
 class ImpressJS(object):
 	def __init__(self, config):
 		template_path = os.path.join(os.path.dirname(__file__), 'templates')
