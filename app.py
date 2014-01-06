@@ -1,6 +1,7 @@
 from socket import gethostname
 import os
 from jinja2 import Environment, FileSystemLoader
+from werkzeug.contrib.fixers import ProxyFix
 from werkzeug.exceptions import HTTPException
 from werkzeug.routing import Rule, Map
 from werkzeug.wrappers import Request, Response
@@ -58,5 +59,6 @@ if __name__ == '__main__':
 	from werkzeug.serving import run_simple
 
 	app = create_app()
+	app.wsgi_app = ProxyFix(app.wsgi_app)
 	port = 5000 if DEBUG else 31045
-	run_simple('127.0.0.1', port, app, use_debugger=DEBUG, use_reloader=not DEBUG)
+	run_simple('127.0.0.1', port, app, use_debugger=DEBUG, use_reloader=DEBUG)
