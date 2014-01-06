@@ -58,7 +58,8 @@
 		<img id="g3" src="/static/cvMedia/gear.svg" alt="">
 	</div>
 </div>
-
+{#  #}
+{% set detailclasses = "step notHistory hidden " %}
 
 <div id='interevent' class="job step" data-x="-530" data-y="700" data-scale="0.3" data-rotate="90">
 	<a href="http://www.interactico.com/" target="_blank">
@@ -68,7 +69,27 @@
 
 	<div class="role">Web developer</div>
 	<p class="timerange">since Aug 2013</p>
-	<!--<a class='more hidden' href="#interevent-detail">show more...</a>-->
+	<a class='more hidden' href="#interevent-detail">show more...</a>
+</div>
+
+<div id='interevent-detail' class="{{ detailclasses }}"
+	 data-x="-580" data-y="700"  data-z="0"
+	 data-scale="0.1" data-rotate="90">
+	<p class="longText">
+		<a target='_blank' href="http://www.interactico.com/">Interactico</a> is a tecnology startup
+		focused on development of mobile apps and advanced web services for fair organizations.<br>
+	</p>
+	<img class="screenshot" src="/static/cvMedia/screenshots/interactico/interactico_main.jpg" alt=""/>
+</div>
+
+<div id='interevent-detail-2' class="{{ detailclasses }}"
+	 data-x="-580" data-y="680" data-z="0"
+	 data-scale="0.1" data-rotate="90" data-rotate-x="45">
+	<p class="longText">
+		My job involved the development of frontend site, the web area to allow exibitors to create their web-catalog
+		served to the apps and the backend integration with fair databases.
+	</p>
+	<img class="screenshot" src="/static/cvMedia/screenshots/interactico/multi-iphone.png" alt=""/>
 </div>
 
 <div id='mion' class="job step"
@@ -82,12 +103,11 @@
 	<a class='more hidden' href="#mion-detail">show more...</a>
 </div>
 
-{% set detailclasses = "step notHistory hidden" %}
+
 <!-- notHistory hidden -->
 <div id='mion-detail' class="{{ detailclasses }}"
-	 data-x="-685" data-y="700"
+	 data-x="-685" data-y="700" data-z="20"
 	 data-scale="0.1" data-rotate="90">
-	<!--style="background-color: red"-->
 	<p class="longText">
 		<a target='_blank' href="http://www.mion.com/">Mion s.p.a.</a> is a medium-sized production company
 		making woven labels and printed hangtags for fashion firms all over the world.
@@ -101,7 +121,7 @@
 </div>
 
 <div id='mion-detail-2' class="{{ detailclasses }}"
-	 data-x="-685" data-y="700"
+	 data-x="-685" data-y="690" data-z="10"
 	 data-scale="0.1" data-rotate="90" data-rotate-x="30"
 		>
 	<p class="longText">
@@ -110,11 +130,11 @@
 		with size calibration and ACL needed for the next steps...
 	</p>
 	<img class='screenshot' src="/static/cvMedia/screenshots/web.mion/0.%20mimago.jpg"
-			alt="Screenshot of Mimago (a product images manager for Mion">
+		 alt="Screenshot of Mimago (a product images manager for Mion">
 </div>
 
 <div id='mion-detail-3' class="{{ detailclasses }}"
-	 data-x="-685" data-y="700"
+	 data-x="-685" data-y="680" data-z="-10"
 	 data-scale="0.1" data-rotate="90" data-rotate-x="60">
 	<p class="longText">
 		Then a Django webapp was created to get the data from our ERP and allow
@@ -122,7 +142,7 @@
 		The new platform was both flexible and modular to be able to manage the upcoming needs.
 	</p>
 	<img class='screenshot' src="/static/cvMedia/screenshots/web.mion/wob.jpg"
-			alt="Screenshots of Web Ordering System">
+		 alt="Screenshots of Web Ordering System">
 </div>
 
 <div id='mion-detail-4' class="{{ detailclasses }}"
@@ -133,7 +153,7 @@
 		and request samples in their mobile devices.
 	</p>
 	<img class='screenshot' src="/static/cvMedia/screenshots/web.mion/catalog.jpg"
-			alt="Screenshots for the Mion catalog online">
+		 alt="Screenshots for the Mion catalog online">
 </div>
 
 
@@ -147,24 +167,24 @@
 </div>
 
 <div id='tam-detail' class="{{ detailclasses }}"
-	 data-x="-820" data-y="700"
+	 data-x="-820" data-y="700" data-z="30"
 	 data-scale="0.1" data-rotate="90" data-rotate-x="0">
 	<p class="longText">
 		TaM is a Taxi Manager system to manage local Taxi consortia in Padova area.
 		I was asked to create a complete platform to cover all the aspects of drivers and administrative work.
 	</p>
 	<img class='screenshot' src="/static/cvMedia/screenshots/TaM/0.homes.jpg"
-			alt="Screenshots of the Tam login pages">
+		 alt="Screenshots of the Tam login pages">
 </div>
 
 <div id='tam-detail-2' class="{{ detailclasses }}"
-	 data-x="-820" data-y="700"
+	 data-x="-820" data-y="700" data-z="20"
 	 data-scale="0.1" data-rotate="90" data-rotate-x="30">
 	<p class="longText">
 		Prices, costs, customers managements, routes are all managed from the web interface.
 	</p>
 	<img class='screenshot' src="/static/cvMedia/screenshots/TaM/1.main.jpg"
-			alt="TaM main page">
+		 alt="TaM main page">
 </div>
 
 <div id='tam-detail-3' class="{{ detailclasses }}"
@@ -175,18 +195,18 @@
 		Invoices are created automatically and can be exported as PDF.
 	</p>
 	<img class='screenshot' src="/static/cvMedia/screenshots/TaM/2.screens.jpg"
-			alt="Some screenshot of TaM">
+		 alt="Some screenshot of TaM">
 </div>
 
 <div id='tam-detail-4' class="{{ detailclasses }}"
-	 data-x="-820" data-y="700"
+	 data-x="-820" data-y="700" data-z="-30"
 	 data-scale="0.1" data-rotate="90" data-rotate-x="90">
 	<p class="longText">
 		A custom access has been given to hotels and agencies customers to allow them to book travels
 		and get notifications by email.
 	</p>
 	<img class='screenshot' src="/static/cvMedia/screenshots/TaM/3.hotel.jpg"
-			alt="Screenshot of the hotel access for Tam">
+		 alt="Screenshot of the hotel access for Tam">
 </div>
 
 <div id='otherWorks' class="job step" data-x="-950" data-y="700" data-scale="0.3" data-rotate="90">
@@ -201,7 +221,7 @@
 
 			<div>
 				<img src="/static/cvMedia/works/other/logo%20Rigomar.gif"
-						alt="Rigomar logo">
+					 alt="Rigomar logo">
 			</div>
 		</div>
 
@@ -212,7 +232,7 @@
 
 			<div>
 				<img src="/static/cvMedia/works/other/logo%20eco.png"
-						alt="ECO space system logo">
+					 alt="ECO space system logo">
 			</div>
 		</div>
 	</div>
@@ -225,7 +245,7 @@
 
 			<div>
 				<img src="/static/cvMedia/works/other/dante.png"
-						alt="Istituto dante alighieri logo">
+					 alt="Istituto dante alighieri logo">
 			</div>
 		</div>
 
@@ -274,15 +294,22 @@
 	</div>
 </div>
 
-<div id="details" class="step slide hidden" data-x="-570" data-y="-150"
+<div id="details" class="step slide hidden" data-x="-570" data-y="-150" data-z="-10"
 	 data-scale=".3" data-rotate-y="180" data-rotate-z="5">
 	<h1>Contact details</h1>
 
-	<p>dario.varotto@gmail.com</p>
+	<p><a href="mailto:dario.varotto@gmail.com">dario.varotto@gmail.com</a></p>
 
-	<p><img class="icon" src="/static/cvMedia/details/skype.svg" alt="skype"> dario.varotto</p>
+	<p>
+		<a href="skype:dario.varotto"><img class="icon" src="/static/cvMedia/details/skype.svg" alt="skype">
+			dario.varotto</a>
+	</p>
 
-	<p><img class="icon" src="/static/cvMedia/details/twitter.svg" alt="twitter"/> @dariosky</p>
+	<p>
+		<a href="https://twitter.com/dariosky" target="_blank">
+			<img class="icon" src="/static/cvMedia/details/twitter.svg" alt="twitter"/> @dariosky
+		</a>
+	</p>
 </div>
 
 <div id="overview" class="step" data-x="-250" data-y="300" data-scale="1.8">
