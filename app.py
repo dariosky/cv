@@ -54,11 +54,11 @@ def create_app(with_static=True):
 		})
 	return app
 
+cvapp = create_app()
+cvapp.wsgi_app = ProxyFix(cvapp.wsgi_app)
 
 if __name__ == '__main__':
+	# this is only the development server
 	from werkzeug.serving import run_simple
-
-	app = create_app()
-	app.wsgi_app = ProxyFix(app.wsgi_app)
 	port = 5000 if DEBUG else 31045
-	run_simple('127.0.0.1', port, app, use_debugger=DEBUG, use_reloader=DEBUG)
+	run_simple('127.0.0.1', port, cvapp, use_debugger=DEBUG, use_reloader=DEBUG)
