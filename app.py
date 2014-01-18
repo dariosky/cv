@@ -60,4 +60,4 @@ if __name__ == '__main__':
 	# this is only the development server
 	from werkzeug.serving import run_simple
 	port = 5000 if DEBUG else 31045
-	run_simple('127.0.0.1', port, cvapp, use_debugger=DEBUG, use_reloader=DEBUG)
+	run_simple('0.0.0.0' if DEBUG else '127.0.0.1', port, cvapp, use_debugger=DEBUG, use_reloader=DEBUG)

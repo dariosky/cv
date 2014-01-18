@@ -324,13 +324,16 @@
 	if ("ontouchstart" in document.documentElement) {
 		document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
 	}
+	try {
+		// prevent the mouse wheel
+		var mouseWheelHandler = function (e) {
+			return false;
+		};
+		document.addEventListener("mousewheel", mouseWheelHandler, false);
+		document.addEventListener("DOMMouseScroll", mouseWheelHandler, false);
+	}
+	catch (e) {}
 
-	// prevent the mouse wheel
-	var mouseWheelHandler = function (e) {
-		return false;
-	};
-	document.addEventListener("mousewheel", mouseWheelHandler, false);
-	document.addEventListener("DOMMouseScroll", mouseWheelHandler, false);
 
 </script>
 
