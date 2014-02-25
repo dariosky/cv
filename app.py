@@ -7,14 +7,18 @@ from werkzeug.routing import Rule, Map
 from werkzeug.wrappers import Request, Response
 from werkzeug.wsgi import SharedDataMiddleware
 
-hostname = gethostname()
-DEBUG = "webfaction" not in hostname
+import mimetypes
+# workaroung to serve svg with correct mimetype
+
+mimetypes.add_type("image/svg+xml", ".svg", True)
+mimetypes.add_type("image/svg+xml", ".svgz", True)
+
 
 class ImpressJS(object):
 	def __init__(self, config):
 		template_path = os.path.join(os.path.dirname(__file__), 'templates')
 		self.jinja_env = Environment(loader=FileSystemLoader(template_path),
-									 autoescape=True)
+		                             autoescape=True)
 		self.url_map = Map([
 			Rule('/', endpoint='main'),
 		])
@@ -40,7 +44,6 @@ class ImpressJS(object):
 		return Response(template.render(context), mimetype='text/html')
 
 	def on_main(self, request):
-		error = None
 		return self.render_template('cv.html', debug=DEBUG)
 
 
@@ -53,11 +56,15 @@ def create_app(with_static=True):
 		})
 	return app
 
+
+hostname = gethostname()
+DEBUG = "webfaction" not in hostname
+
 cvapp = create_app()
 cvapp.wsgi_app = ProxyFix(cvapp.wsgi_app)
 
 if __name__ == '__main__':
-	# this is only the development server
 	from werkzeug.serving import run_simple
+
 	port = 5000 if DEBUG else 31045
 	run_simple('0.0.0.0' if DEBUG else '127.0.0.1', port, cvapp, use_debugger=DEBUG, use_reloader=DEBUG)
