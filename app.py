@@ -8,7 +8,7 @@ from werkzeug.wrappers import Request, Response
 from werkzeug.wsgi import SharedDataMiddleware
 
 import mimetypes
-# workaroung to serve svg with correct mimetype
+# workaround to serve svg with correct mimetype
 
 mimetypes.add_type("image/svg+xml", ".svg", True)
 mimetypes.add_type("image/svg+xml", ".svgz", True)

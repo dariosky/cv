@@ -93,6 +93,18 @@
 	<img class="screenshot" src="/static/cvMedia/screenshots/interactico/multi-iphone.png" alt=""/>
 </div>
 
+<div id='interevent-detail-3' class="{{ detailclasses }}"
+	 data-x="-580" data-y="650" data-z="0"
+	 data-scale="0.1" data-rotate="90" data-rotate-x="90">
+	<p class="longText">
+		During the <a href="http://www.vinitaly.com/EN" target="_blank">Vinitaly International Judging Competition 2014,</a>
+		I was responsible for the backend system and deployment of the event.<br/>
+		This involved the management of data and the preparation of an API called in realtime by an app used by 105 judges.
+	</p>
+	<img class="screenshot" src="/static/cvMedia/screenshots/interactico/vinitaly.jpg" alt=""/>
+</div>
+
+
 <div id='mion' class="job step"
 	 data-x="-630" data-y="700" data-scale="0.3" data-rotate="90">
 	<a target='_blank' href="http://www.mion.com/">
@@ -269,22 +281,22 @@
 
 		<div>
 			<h2>Backend Development</h2>
-			#django #postgresql #mongodb
-			#mediagenerator #south #reportlab<br>
+			#django #postgresql #mongodb #meteor<br/>
+			#mediagenerator #south #reportlab #django-restframework<br/>
 			#tsql #java #csharp #php
-			#svn #git #webfaction
+			#git #svn #webfaction
 		</div>
 
 		<div>
 			<h2>Administration</h2>
-			#linux #virtualization #vmware #vsphere
-			#gunicorn
+			#linux #virtualization #vmware #vsphere<br/>
+			#gunicorn<br/>
 			#qmail #squid #sme
 		</div>
 
 		<div>
 			<h2>Frontend</h2>
-			#javascript #jquery #html #css
+			#javascript #jquery #html #css<br/>
 			#gevent-socket.io #nodejs #meteor
 		</div>
 
@@ -327,7 +339,7 @@
 	}
 	try {
 		// prevent the mouse wheel
-		var mouseWheelHandler = function (e) {
+		var mouseWheelHandler = function () {
 			return false;
 		};
 		document.addEventListener("mousewheel", mouseWheelHandler, false);
@@ -344,21 +356,23 @@
 	api.init();
 	var unLinearStory = function (root) {
 		var oldNext = api.next,
-				oldPrev = api.prev;
+			oldPrev = api.prev;
 
 		function override(oldfunc) {
 			// return a function equal to the oldfunc (prev/next) but skipping steps if they are .notHistory
+			var skipDetail = false;
 			return function () {
 				var result,
 						currentStep = document.querySelector('.active'); // get the current step
-				if (currentStep.classList.contains('notHistory')) { // if we are in a detail step, move to next detail
+				if (skipDetail && currentStep.classList.contains('notHistory')) {
+				// if we are in a detail step, move to next detail
 					return oldfunc.apply(this, arguments);
 				}
 
 				do {
 					result = oldfunc.apply(this, arguments); // like calling super
 				}
-				while (result.classList.contains('notHistory'));	// skip if .notHistoy
+				while (skipDetail && result.classList.contains('notHistory'));	// skip if .notHistoy
 				return result;
 			}
 		}
