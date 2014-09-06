@@ -2,7 +2,7 @@ from socket import gethostname
 import os
 from jinja2 import Environment, FileSystemLoader
 from werkzeug.contrib.fixers import ProxyFix
-from werkzeug.exceptions import HTTPException
+from werkzeug.exceptions import HTTPException, NotFound
 from werkzeug.routing import Rule, Map
 from werkzeug.wrappers import Request, Response
 from werkzeug.wsgi import SharedDataMiddleware
@@ -33,6 +33,8 @@ class ImpressJS(object):
 		try:
 			endpoint, values = adapter.match()
 			return getattr(self, "on_%s" % endpoint)(request, **values)
+		except NotFound, e:
+			return self.not_found(request)
 		except HTTPException as e:
 			return e
 
@@ -45,6 +47,10 @@ class ImpressJS(object):
 
 	def on_main(self, request):
 		return self.render_template('cv.html', debug=DEBUG)
+
+	def not_found(self, request):
+		print "404"
+		return self.render_template('404.html', debug=DEBUG)
 
 
 def create_app(with_static=True):
