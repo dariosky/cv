@@ -27,7 +27,7 @@ GUNICORN="$ENV_PATH/bin/gunicorn"
 WSGIAPP=app:cvapp
 
 # The default args for gunicorn see http://gunicorn.org/configure.html#contents
-DEFAULT_ARGS="--c guniconfig.py "
+DEFAULT_ARGS="-c guniconfig.py "
 
 # Do not edit below this line
 BASE_CMD="$GUNICORN $WSGIAPP $DEFAULT_ARGS"
