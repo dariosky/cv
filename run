@@ -42,7 +42,7 @@ start_server () {
   fi
   cd $PROJECTLOC
   echo "starting"
-  $BASE_CMD --daemon --bind=$ADDRESS:$SERVER_PORT --pid=$1
+  $BASE_CMD --daemon --pid=$1
 }
 
 stop_server (){
