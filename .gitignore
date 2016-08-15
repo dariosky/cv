@@ -3,7 +3,7 @@
 
 .environment
 .picasa.ini
-.idea
+.idea/
 .sass-cache
 .trash
-
+.pycharmrc

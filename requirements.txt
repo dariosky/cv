@@ -1,2 +1,5 @@
 jinja2
 werkzeug
+gunicorn
+
+setproctitle
