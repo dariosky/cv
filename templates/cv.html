@@ -20,7 +20,7 @@
 		</div>
 		<h1>Dario Varotto</h1>
 
-		<p>Developer, designer & tech geek</p>
+		<p>Full stack Developer & tech geek</p>
 	</div>
 
 	<div id="previousWorks" class="step" data-x="-400" data-y="700" data-scale="0.5" data-rotate="90">
@@ -32,15 +32,51 @@
 			<img id="g3" src="/static/cvMedia/gear.svg" alt="">
 		</div>
 	</div>
+
 	{% set detailclasses = "step notHistory hidden " %}
+
 	<div id="ravenpack" class="job step" data-x="-530" data-y="700" data-scale="0.3" data-rotate="90">
-		<a href="http://www.ravenpack.com/" target="_blank">
+		<a href="https://www.ravenpack.com/" target="_blank">
 			<img src="/static/cvMedia/works/ravenpack.svg" width="380" alt="RavenPack International S.L.">
 		</a>
 
 		<div class="role">Senior Python developer<br>Web dept. manager</div>
 		<p class="timerange">since Feb 2015</p>
+		<a class='more hidden' href="#ravenpack-detail">show more...</a>
 	</div>
+
+	<div id='ravenpack-detail' class="{{ detailclasses }}"
+		 data-x="-590" data-y="700"
+		 data-scale="0.1" data-rotate="90">
+		<p class="longText">
+			<a target='_blank' href="https://www.ravenpack.com/">RavenPack S.L.</a> is a leading big data
+			analytics provider for financial services.
+		</p>
+		<img class="screenshot" src="/static/cvMedia/screenshots/ravenpack/home.png" alt=""/>
+	</div>
+
+	<div id='ravenpack-detail-2' class="{{ detailclasses }}"
+		 data-x="-590" data-y="730"
+		 data-scale="0.07" data-rotate="90">
+		<p class="longText">
+			We built a dashboard to allow customers to customize their dataset and get quick
+			insights over their specific area of interest.<br>
+			We used a Socket.io real-time application and a plethora of Amazon Web Services to
+			deliver a great customer experience in the secure web application.
+		</p>
+		<img class="screenshot" src="/static/cvMedia/screenshots/ravenpack/dashboard.png" alt=""/>
+	</div>
+
+	<div id='ravenpack-detail-3' class="{{ detailclasses }}"
+		 data-x="-590" data-y="760"
+		 data-scale="0.07" data-rotate="90">
+		<p class="longText">
+			I managed a group of great Python full-stack developers, selecting candidates, ensuring code
+			quality and making technical design decision to lead the team.<br>
+		</p>
+		<img class="screenshot" src="/static/icons/meeting.png" alt=""/>
+	</div>
+
 
 	<div id='interevent' class="job step" data-x="-630" data-y="700" data-scale="0.3" data-rotate="90">
 		<a href="http://www.interactico.com/" target="_blank">
@@ -57,7 +93,7 @@
 		 data-scale="0.1" data-rotate="90">
 		<p class="longText">
 			<a target='_blank' href="http://www.interactico.com/">Interevent</a> is a technology startup
-			focused on development of mobile apps and advanced web services for fair organizations.<br>
+			focused on the development of mobile apps and advanced web services for fair organizations.<br>
 			It's technological part of the bigger group <a href="http://www.giplanet.com/" target="_blank">GiPlanet</a>.
 		</p>
 		<img class="screenshot" src="/static/cvMedia/screenshots/interactico/interactico_main.jpg" alt=""/>
@@ -67,9 +103,8 @@
 		 data-x="-680" data-y="680" data-z="0"
 		 data-scale="0.1" data-rotate="90">
 		<p class="longText">
-			My job involved the development of frontend site, the web area to allow exibitors to create their
-			web-catalog
-			served to the apps and the backend integration with fair databases.
+			My job involved the development of frontend site, the web area to allow exhibitors to create their
+			web-catalog served to the apps and the backend integration with fair databases.
 		</p>
 		<img class="screenshot" src="/static/cvMedia/screenshots/interactico/multi-iphone.png" alt=""/>
 	</div>
@@ -122,7 +157,7 @@
 		</p>
 
 		<p class="longText">
-			My job involved many optimization and integration problems.<br>
+			My job involved many optimizations and integration problems.<br>
 			Interfacing with a closed source ERP and developing interfaces with many tools was
 			funny and challenging.
 		</p>
