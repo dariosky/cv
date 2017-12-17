@@ -1,0 +1,7 @@
+*.py
+
+# unminified files
+*.scss
+*.less
+
+/template

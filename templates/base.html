@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<title>{% block title %}{% endblock %} | Dario Varotto</title>
+	{% if not debug %}{% include 'analytics.html' %}{% endif %}
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=1024"/>
 	<meta name="apple-mobile-web-app-capable" content="yes"/>
@@ -16,8 +17,6 @@
 
 <body class="impress-not-supported">
 {% block body %}{% endblock %}
-
-{% if not debug %}{% include 'analytics.html' %}{% endif %}
 </body>
 
 </html>
