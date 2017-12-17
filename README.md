@@ -13,4 +13,4 @@ This was a playground to use some CSS animation and with a light deployment usin
 I first started a similar thing in Prezi, but I prefer to have it in a self-hosted space with more flexibility,
 so here we are.
 
-It's also hosted on [surge.sh](http://surge.sh/), check it out: [cv.dariosky.it](https://cv.dariosky.it/)
+Check it out: [cv.dariosky.it](https://cv.dariosky.it/)
