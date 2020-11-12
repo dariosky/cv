@@ -3,11 +3,11 @@ import os
 from socket import gethostname
 
 from jinja2 import Environment, FileSystemLoader
-from werkzeug.contrib.fixers import ProxyFix
 from werkzeug.exceptions import HTTPException, NotFound
+from werkzeug.middleware.proxy_fix import ProxyFix
+from werkzeug.middleware.shared_data import SharedDataMiddleware
 from werkzeug.routing import Rule, Map
 from werkzeug.wrappers import Request, Response
-from werkzeug.wsgi import SharedDataMiddleware
 
 # workaround to serve svg with correct mimetype
 
@@ -16,7 +16,7 @@ mimetypes.add_type("image/svg+xml", ".svgz", True)
 
 
 class ImpressJS(object):
-    def __init__(self,):
+    def __init__(self, ):
         template_path = os.path.join(os.path.dirname(__file__), 'templates')
         self.jinja_env = Environment(loader=FileSystemLoader(template_path),
                                      autoescape=True)
