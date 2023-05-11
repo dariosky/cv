@@ -34,19 +34,43 @@
 	</div>
 
 	{% set detailclasses = "step notHistory hidden " %}
+    <div id="gsr" class="job step" data-x="-530" data-y="700" data-scale="0.3" data-rotate="90">
+		<a href="https://www.gsr.io/" target="_blank">
+			<img src="/static/cvMedia/works/gsr.svg" width="300" alt="GSR">
+		</a>
 
-	<div id="ravenpack" class="job step" data-x="-530" data-y="700" data-scale="0.3" data-rotate="90">
+		<p class="timerange">since Feb 2022</p>
+		<div class="role">Full stack Software engineer</div>
+		<a class='more hidden' href="#gsr-detail">show more...</a>
+	</div>
+
+    <div id='gsr-detail' class="{{ detailclasses }}"
+		 data-x="-522" data-y="620"
+		 data-scale="0.1" data-rotate="90">
+		<p class="longText">
+			GSR is a crypto trading firm offering clients a variety of financial products:
+            from market-making to smart-liquidations, OTC orders, and funds.<br/>
+            I joined GSR with the goal of building from scratch a platform for delivering and giving secure access
+            to all the internal services.
+            I built a platform that is using Kubernetes running on Amazon EKS with a FastAPI Python backend
+            - a thin NextJS node authentication layer and a modern React application on the frontend.
+            This allowed building a custom solution with specific granular web-push notifications, auth,
+            and permissions that helped clients and internal users to perform tasks faster and efficiently.
+		</p>
+	</div>
+
+	<div id="ravenpack" class="job step" data-x="-610" data-y="700" data-scale="0.3" data-rotate="90">
 		<a href="https://www.ravenpack.com/" target="_blank">
 			<img src="/static/cvMedia/works/ravenpack.svg" width="380" alt="RavenPack International S.L.">
 		</a>
 
-		<p class="timerange">since Feb 2015</p>
-		<div class="role">Senior Python developer<br>Web dept. manager</div>
+		<p class="timerange">Feb 2015 - Feb 2022</p>
+		<div class="role">Senior Python developer<br>Web dept. manager and team lead</div>
 		<a class='more hidden' href="#ravenpack-detail">show more...</a>
 	</div>
 
 	<div id='ravenpack-detail' class="{{ detailclasses }}"
-		 data-x="-590" data-y="700"
+		 data-x="-650" data-y="580"
 		 data-scale="0.1" data-rotate="90">
 		<p class="longText">
 			<a target='_blank' href="https://www.ravenpack.com/">RavenPack S.L.</a> is a leading big data
@@ -56,7 +80,7 @@
 	</div>
 
 	<div id='ravenpack-detail-2' class="{{ detailclasses }}"
-		 data-x="-590" data-y="730"
+		 data-x="-650" data-y="630"
 		 data-scale="0.07" data-rotate="90">
 		<p class="longText">
 			We built a dashboard to allow clients to query their datasets and get quick insights over
@@ -68,7 +92,7 @@
 	</div>
 
 	<div id='ravenpack-detail-3' class="{{ detailclasses }}"
-		 data-x="-590" data-y="760"
+		 data-x="-650" data-y="680"
 		 data-scale="0.07" data-rotate="90">
 		<p class="longText">
 			While development was my main focus, I managed a group of great Python Full-Stack
@@ -79,7 +103,7 @@
 	</div>
 
 
-	<div id='interevent' class="job step" data-x="-630" data-y="700" data-scale="0.3" data-rotate="90">
+	<div id='interevent' class="job step" data-x="-690" data-y="700" data-scale="0.3" data-rotate="90">
 		<a href="http://www.interactico.com/" target="_blank">
 			<img src="/static/cvMedia/works/interactico.svg" height="120" width="216" alt="Interactico">
 		</a>
@@ -90,7 +114,7 @@
 	</div>
 
 	<div id='interevent-detail' class="{{ detailclasses }}"
-		 data-x="-680" data-y="650" data-z="0"
+		 data-x="-720" data-y="710" data-z="0"
 		 data-scale="0.1" data-rotate="90">
 		<p class="longText">
 			<a target='_blank' href="http://www.interactico.com/">Interevent</a> is a technology startup
@@ -101,7 +125,7 @@
 	</div>
 
 	<div id='interevent-detail-2' class="{{ detailclasses }}"
-		 data-x="-680" data-y="680" data-z="0"
+		 data-x="-720" data-y="740" data-z="0"
 		 data-scale="0.1" data-rotate="90">
 		<p class="longText">
 			My job involved the development of frontend site, the web area to allow exhibitors to create their
@@ -111,7 +135,7 @@
 	</div>
 
 	<div id='interevent-detail-3' class="{{ detailclasses }}"
-		 data-x="-680" data-y="710" data-z="0"
+		 data-x="-720" data-y="770" data-z="0"
 		 data-scale="0.1" data-rotate="90">
 		<p class="longText">
 			During the <a href="http://www.vinitaly.com/EN" target="_blank">Vinitaly International Judging Competition
@@ -124,7 +148,7 @@
 	</div>
 
 	<div id='interevent-detail-4' class="{{ detailclasses }}"
-		 data-x="-680" data-y="740" data-z="0"
+		 data-x="-720" data-y="800" data-z="0"
 		 data-scale="0.1" data-rotate="90">
 		<p class="longText">
 			GiPlanet organized entirely the Matching Fair 2014 in Milano Rho.<br/>
@@ -137,7 +161,7 @@
 
 
 	<div id='mion' class="job step"
-		 data-x="-730" data-y="700" data-scale="0.3" data-rotate="90">
+		 data-x="-770" data-y="700" data-scale="0.3" data-rotate="90">
 		<a target='_blank' href="http://www.mion.com/">
 			<img src="/static/cvMedia/works/mion.svg" width="300" height="112"
 				 alt="Mion labels"></a>
@@ -216,7 +240,7 @@
 			<p>TaM is a Taxi Manager system to manage local Taxi consortia in Padova area.<br>
 				I was asked to create a complete platform to cover all the aspects of drivers and
 				administrative work.</p>
-			<p>The project evolved in the years and and since then two other taxi contortia are
+			<p>The project evolved in the years and and since then two other taxi consortia are
 				using it. The source code is Open Source,
 				<a href="https://github.com/dariosky/tam" target="_blank">available in Github</a>.
 			</p>
@@ -298,7 +322,7 @@
 			</div>
 
 			<div>
-				<h2>3D modeler</h2>
+				<h2>3D graphic designer</h2>
 
 				<p>Progress pubblicità</p>
 
@@ -321,6 +345,9 @@
 				<h2>React Nanodegree Certificate</h2>
 				<br>
 				<p>React+Redux+React Native</p>
+                <br>
+				<h2>Self Driving Car nanodegree</h2>
+                Computer-Vision, DNN, AI
 			</div>
 
 			<div class="mongo">
@@ -343,7 +370,7 @@
 
 					<p>University of Padua, 2005</p>
 				</div>
-
+                <br>
 				<div id="secondary">
 					<h2>Head technician in computer technology</h2>
 
@@ -360,7 +387,7 @@
 
 			<div>
 				<h2>Backend Development</h2>
-				#django #postgresql #mongodb<br/>
+				#django #flask #fastapi #postgresql #mongodb<br/>
 				#mediagenerator #reportlab #django-restframework<br/>
 				#tsql #aws #git #svn #webfaction
 			</div>
